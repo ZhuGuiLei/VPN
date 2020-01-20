@@ -7,38 +7,38 @@
 
 设置项目支持VPN
 
-![Screenshot](https://raw.githubusercontent.com/ZhuGuiLei/VPN/master/img/1.png)
+![Screenshot](https://raw.githubusercontent.com/ZhuGuiLei/VPN/master/img/01.png)
 
 
 ### 第二步 　
 
 添加VPNIKEv2.framework
 
-![Screenshot](https://raw.githubusercontent.com/ZhuGuiLei/VPN/master/img/2.png)
+![Screenshot](https://raw.githubusercontent.com/ZhuGuiLei/VPN/master/img/02.png)
 
 ### 第三步  VPN控制
 
-    初始化
+初始化
 ```
 let vpnMgr = VPNManager.init(type: .IKEv2, VPNName: "账户", serverAddress: "服务器地址", remoteIdentifier: "描述", passwordReference: "密码", sharedSecretReference: "密钥")
 ```
 
-    创建VPN
+创建VPN
 ```
 vpnMgr.createVPN()
 ```
 
-    删除VPN
+删除VPN
 ```
 vpnMgr.removeVPN()
 ```
 
-    连接VPN
+连接VPN
 ```
 vpnMgr.connectVPN()
 ```
 
-    断开VPN
+断开VPN
 ```
 vpnMgr.disconnectVPN()
 ```
