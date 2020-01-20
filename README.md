@@ -9,12 +9,14 @@
 
 ![Screenshot](https://raw.githubusercontent.com/ZhuGuiLei/VPN/master/img/01.png)
 
+![Screenshot](https://raw.githubusercontent.com/ZhuGuiLei/VPN/master/img/02.png)
+
 
 ### 第二步 　
 
 添加VPNIKEv2.framework
 
-![Screenshot](https://raw.githubusercontent.com/ZhuGuiLei/VPN/master/img/02.png)
+![Screenshot](https://raw.githubusercontent.com/ZhuGuiLei/VPN/master/img/03.png)
 
 ### 第三步  VPN控制
 
