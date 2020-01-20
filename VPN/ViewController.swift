@@ -42,7 +42,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         
         
-//        VPNManager.initializeMethod()
+        VPNManager.initializeMethod()
 
         typeChange(typeSelectControl)
         

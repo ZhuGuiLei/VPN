@@ -20,6 +20,9 @@
 
 初始化
 ```
+// 只调用一次，做方法替换
+VPNManager.initializeMethod()
+// 初始化
 let vpnMgr = VPNManager.init(type: .IKEv2, VPNName: "账户", serverAddress: "服务器地址", remoteIdentifier: "描述", passwordReference: "密码", sharedSecretReference: "密钥")
 ```
 
