@@ -3,38 +3,43 @@
 ###
 在App里控制VPN　IKEv2的配置与连接断开
 
-### 动机 　
+### 第一步 　
 
-iOS只提供了添加IPSec 和IKEV2的接口。L2TP和PPTP是苹果私有的。
+设置项目支持VPN
 
+![Screenshot](https://raw.githubusercontent.com/ZhuGuiLei/VPN/master/img/1.png)
+
+
+### 第二步 　
+
+添加VPNIKEv2.framework
+
+![Screenshot](https://raw.githubusercontent.com/ZhuGuiLei/VPN/master/img/2.png)
+
+### 第三步  VPN控制
+
+    初始化
 ```
-If you want to connect programatically in ios 8 you can use only IPSec or IKEv2 protocols.   
-L2TP and PPTP protocols are private for apple.   
-It is not possible to use L2TP and PPTP APIs in your applications.   
-Only Apple is currently using these APIs.
+let vpnMgr = VPNManager.init(type: .IKEv2, VPNName: "账户", serverAddress: "服务器地址", remoteIdentifier: "描述", passwordReference: "密码", sharedSecretReference: "密钥")
 ```
 
+    创建VPN
+```
+vpnMgr.createVPN()
+```
 
-Create L2TP in iOS with NetworkExtension
+    删除VPN
+```
+vpnMgr.removeVPN()
+```
 
-Here we use the Undocumented API NEVPNProtocolL2TP and some little trick
+    连接VPN
+```
+vpnMgr.connectVPN()
+```
 
-## Test
-
-(X)I use `mac os Server` to start a L2TP service(X)
-
-(X)Tested in iOS9 and iOS11(X)
-
-Although the system says is connected.  
-The network traffic seems NOT go through the vpn server.  
-Something must be missing,or the Apple do not realy add the L2TP Interface yet. 
-
-
-
-## ToDo
-
-iOS save the personal vpn configure path: 
-`/Library/Preferences/com.apple.networkextension.plist`
-
-Look into those file:
-NetworkExtesion.framework　,pppd and neSessionManager.
+    断开VPN
+```
+vpnMgr.disconnectVPN()
+```
+　
