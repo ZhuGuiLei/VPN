@@ -1,7 +1,7 @@
-## VPN-IKEv2
+## VPN-L2TP
 
 ###
-在App里控制VPN　IKEv2的配置与连接断开
+在App里控制VPN　L2TP的配置与连接断开
 
 ### 第一步 　
 
@@ -26,7 +26,7 @@
 VPNManager.initializeMethod()
 
 // 初始化
-let vpnMgr = VPNManager.init(type: .IKEv2, VPNName: "账户", serverAddress: "服务器地址", remoteIdentifier: "描述", passwordReference: "密码", sharedSecretReference: "密钥", authenticationMethod: "验证方法")
+let vpnMgr = VPNManager.init(type: .L2TP, VPNName: "账户", serverAddress: "服务器地址", remoteIdentifier: "描述", passwordReference: "密码", sharedSecretReference: "密钥", authenticationMethod: "验证方法")
 
 // 设置代理
 vpnMgr.delegate = self
