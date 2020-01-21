@@ -155,7 +155,7 @@ public class LJVPNManager: NSObject {
         }
     }
     
-    public func setupVPNManager() {
+    func setupVPNManager() {
         if type == .IKEv2 {
             setupIKEv2()
         } else {
@@ -223,23 +223,6 @@ public class LJVPNManager: NSObject {
             let status = c.statusEx()
             if delegate != nil {
                 delegate?.VPNStatusDidChangeNotification(status: status)
-            } else {
-                switch status {
-                    case .invalid:
-                        print("无效")
-                    case .disconnected:
-                        print("未连接")
-                    case .connecting:
-                        print("正在连接...")
-                    case .connected:
-                        print("已连接")
-                    case .reasserting:
-                        print("重复...")
-                    case .disconnecting:
-                        print("断开连接")
-                    default:
-                        break
-                }
             }
         }
     }
@@ -275,20 +258,16 @@ public class LJVPNManager: NSObject {
 }
 
 
+extension NEVPNManager
+{
+    @objc func isProtocolTypeValid2(_ arg: CLongLong) -> Bool {
+        return true
+    }
+}
 
-//extension NEVPNManager
-//{
-//    @objc func isProtocolTypeValid2(arg: CLongLong) -> Bool {
-//        return true
-//    }
-//}
-//
-//extension NEVPNConnection
-//{
-//    @objc func statusEx() -> NEVPNStatus {
-//         return NEVPNStatus.disconnected
-//    }
-////    @objc var statusEx: NEVPNStatus {
-////        return NEVPNStatus.disconnected
-////    }
-//}
+extension NEVPNConnection
+{
+    @objc func statusEx() -> NEVPNStatus {
+        return NEVPNStatus.disconnected
+    }
+}

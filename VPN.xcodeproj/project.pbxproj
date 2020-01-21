@@ -7,23 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1875437323D58D4600390632 /* LJVPNManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875437223D58D4600390632 /* LJVPNManager.swift */; };
-		1875437623D5977800390632 /* NetworkExtesionPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1875437523D5977800390632 /* NetworkExtesionPrivate.m */; };
+		18C04F3723D6A69C00EE46F8 /* LJVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C04F2B23D6A3D900EE46F8 /* LJVPN.framework */; };
+		18C04F3823D6A69C00EE46F8 /* LJVPN.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18C04F2B23D6A3D900EE46F8 /* LJVPN.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18CB45E823CD975700C470A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB45E723CD975700C470A1 /* AppDelegate.swift */; };
 		18CB45EC23CD975700C470A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB45EB23CD975700C470A1 /* ViewController.swift */; };
 		18CB45EF23CD975700C470A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CB45ED23CD975700C470A1 /* Main.storyboard */; };
 		18CB45F123CD975800C470A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18CB45F023CD975800C470A1 /* Assets.xcassets */; };
 		18CB45F423CD975800C470A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CB45F223CD975800C470A1 /* LaunchScreen.storyboard */; };
 		18CB460B23D19E9800C470A1 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CB460A23D19E9800C470A1 /* NetworkExtension.framework */; };
-		18CB460D23D2A84400C470A1 /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CB460C23D2A84300C470A1 /* Network.framework */; };
 		18CB46E423D54FCE00C470A1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 18CB46E323D54FCE00C470A1 /* README.md */; };
 		7941F47A10B0C4A6BC6B5B46 /* Pods_VPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62494300AF8CC76832BB4205 /* Pods_VPN.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		18C04F2E23D6A3D900EE46F8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				18C04F3823D6A69C00EE46F8 /* LJVPN.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		1875437223D58D4600390632 /* LJVPNManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJVPNManager.swift; sourceTree = "<group>"; };
-		1875437423D58DB000390632 /* NetworkExtesionPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkExtesionPrivate.h; sourceTree = "<group>"; };
-		1875437523D5977800390632 /* NetworkExtesionPrivate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkExtesionPrivate.m; sourceTree = "<group>"; };
+		18C04F2B23D6A3D900EE46F8 /* LJVPN.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LJVPN.framework; sourceTree = "<group>"; };
 		18CB45E423CD975700C470A1 /* VPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CB45E723CD975700C470A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18CB45EB23CD975700C470A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,8 +58,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7941F47A10B0C4A6BC6B5B46 /* Pods_VPN.framework in Frameworks */,
+				18C04F3723D6A69C00EE46F8 /* LJVPN.framework in Frameworks */,
 				18CB460B23D19E9800C470A1 /* NetworkExtension.framework in Frameworks */,
-				18CB460D23D2A84400C470A1 /* Network.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,9 +90,6 @@
 				18CB460923D19E9800C470A1 /* VPN.entitlements */,
 				18CB45E723CD975700C470A1 /* AppDelegate.swift */,
 				18CB45EB23CD975700C470A1 /* ViewController.swift */,
-				1875437223D58D4600390632 /* LJVPNManager.swift */,
-				1875437423D58DB000390632 /* NetworkExtesionPrivate.h */,
-				1875437523D5977800390632 /* NetworkExtesionPrivate.m */,
 				18CB45ED23CD975700C470A1 /* Main.storyboard */,
 				18CB45F023CD975800C470A1 /* Assets.xcassets */,
 				18CB45F223CD975800C470A1 /* LaunchScreen.storyboard */,
@@ -95,6 +103,7 @@
 		18CB45FB23CD976500C470A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18C04F2B23D6A3D900EE46F8 /* LJVPN.framework */,
 				18CB460C23D2A84300C470A1 /* Network.framework */,
 				18CB460A23D19E9800C470A1 /* NetworkExtension.framework */,
 				62494300AF8CC76832BB4205 /* Pods_VPN.framework */,
@@ -123,6 +132,7 @@
 				18CB45E123CD975700C470A1 /* Frameworks */,
 				18CB45E223CD975700C470A1 /* Resources */,
 				32D9E502DEE03F96E6168F85 /* [CP] Embed Pods Frameworks */,
+				18C04F2E23D6A3D900EE46F8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -228,10 +238,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1875437323D58D4600390632 /* LJVPNManager.swift in Sources */,
 				18CB45EC23CD975700C470A1 /* ViewController.swift in Sources */,
 				18CB45E823CD975700C470A1 /* AppDelegate.swift in Sources */,
-				1875437623D5977800390632 /* NetworkExtesionPrivate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

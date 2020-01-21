@@ -14,7 +14,7 @@
 
 ### 第二步 　
 
-添加VPNIKEv2.framework
+添加LJVPN.framework
 
 ![Screenshot](https://raw.githubusercontent.com/ZhuGuiLei/VPN/master/img/03.png)
 
@@ -24,8 +24,27 @@
 ```
 // 只调用一次，做方法替换
 VPNManager.initializeMethod()
+
 // 初始化
 let vpnMgr = VPNManager.init(type: .IKEv2, VPNName: "账户", serverAddress: "服务器地址", remoteIdentifier: "描述", passwordReference: "密码", sharedSecretReference: "密钥")
+
+// 设置代理
+vpnMgr.delegate = self
+
+// 当前连接状态
+let status = vpnMgr.status
+```
+```
+// 代理监听状态变化，类型为L2TP时监听状态总是无效
+func VPNStatusDidChangeNotification(status: NEVPNStatus) {
+}
+```
+
+VPN是否配置
+```
+vpnMgr?.checkProtocol(completion: { (b: Bool) in
+    // b == true 是已经配置
+})
 ```
 
 创建VPN

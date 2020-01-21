@@ -1,0 +1,11 @@
+framework module LJVPN {
+  umbrella header "LJVPN.h"
+
+  export *
+  module * { export * }
+}
+
+module LJVPN.Swift {
+    header "LJVPN-Swift.h"
+    requires objc
+}
