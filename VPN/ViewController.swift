@@ -48,11 +48,6 @@ class ViewController: UIViewController, UITextFieldDelegate, LJVPNStatusDelegate
 
         typeChange(typeSelectControl)
         
-        /// VPN是否配置
-        vpnMgr?.checkProtocol(completion: { (b: Bool) in
-            // b == true 是已经配置
-        })
-        let status = vpnMgr.status
         self.setupVPNManager()
     }
     
