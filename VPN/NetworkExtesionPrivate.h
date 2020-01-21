@@ -49,6 +49,7 @@ typedef enum : NSUInteger {
 
 @interface NEVPNConnection ()
 
+-(NEVPNStatus)statusEx;
 -(void)dealloc;
 -(id)initWithType:(int)arg1 ;
 -(void)setSession:(void*)arg1 ;
@@ -308,9 +309,11 @@ typedef enum : NSUInteger {
 -(void)setHasLoaded:(BOOL)arg1 ;
 -(id)initWithGrade:(long long)arg1 connection:(id)arg2 ;
 -(BOOL)isProtocolTypeValid:(long long)arg1 ;
+-(BOOL)isProtocolTypeValid2:(long long)arg1;
 -(void)additionalSetup;
 -(NEVPNProtocol *)protocolConfiguration;
 //-(void)setProtocolConfiguration:(NEVPNProtocol *)arg1 ;
+
 @end
 
 //@interface NEVPNManagerSub: NEVPNManager

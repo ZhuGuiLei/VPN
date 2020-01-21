@@ -7,9 +7,10 @@
 //
 
 import UIKit
-import VPNIKEv2
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, LJVPNStatusDelegate {
+    
+    
 
     @IBOutlet weak var typeSelectControl: UISegmentedControl!
     
@@ -19,7 +20,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordReferenceText: UITextField!
     @IBOutlet weak var sharedSecretReferenceText: UITextField!
     
-    var vpnMgr: VPNManager?
+    var vpnMgr: LJVPNManager?
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -42,7 +43,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         
         
-        VPNManager.initializeMethod()
+        LJVPNManager.initializeMethod()
 
         typeChange(typeSelectControl)
         
@@ -51,12 +52,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func typeChange(_ sender: UISegmentedControl) {
-        remoteIdentifierText.text = UserDefaults.standard.object(forKey: "remoteIdentifier\(typeSelectControl.selectedSegmentIndex)") as? String
-        serverAddressText.text = UserDefaults.standard.object(forKey: "serverAddress\(typeSelectControl.selectedSegmentIndex)") as? String
-        VPNNameText.text = UserDefaults.standard.object(forKey: "VPNName\(typeSelectControl.selectedSegmentIndex)") as? String
-        passwordReferenceText.text = UserDefaults.standard.object(forKey: "passwordReference\(typeSelectControl.selectedSegmentIndex)") as? String
-        sharedSecretReferenceText.text = UserDefaults.standard.object(forKey: "sharedSecretReference\(typeSelectControl.selectedSegmentIndex)") as? String
-    }
+        remoteIdentifierText.text = UserDefaults.standard.object(forKey: "remoteIdentifier\(typeSelectControl.selectedSegmentIndex)") as? String ?? "vpn后台"
+        serverAddressText.text = UserDefaults.standard.object(forKey: "serverAddress\(typeSelectControl.selectedSegmentIndex)") as? String ?? "10.3.178.178"
+        VPNNameText.text = UserDefaults.standard.object(forKey: "VPNName\(typeSelectControl.selectedSegmentIndex)") as? String ?? "zhuguilei"
+        passwordReferenceText.text = UserDefaults.standard.object(forKey: "passwordReference\(typeSelectControl.selectedSegmentIndex)") as? String ?? "zhuguilei.@af$"
+        sharedSecretReferenceText.text = UserDefaults.standard.object(forKey: "sharedSecretReference\(typeSelectControl.selectedSegmentIndex)") as? String ?? "zhima123"
+    } 
     
     @IBAction func saveAction(_ sender: UIButton) {
         UserDefaults.standard.set(remoteIdentifierText.text, forKey: "remoteIdentifier\(typeSelectControl.selectedSegmentIndex)")
@@ -73,20 +74,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func setupVPNManager()
     {
         if typeSelectControl.selectedSegmentIndex == 0 {
-            vpnMgr = VPNManager.init(type: .L2TP,
-                                     VPNName: VPNNameText.text,
-                                     serverAddress: serverAddressText.text,
-                                     remoteIdentifier: remoteIdentifierText.text,
-                                     passwordReference: passwordReferenceText.text,
-                                     sharedSecretReference: sharedSecretReferenceText.text)
+            vpnMgr = LJVPNManager.init(type: .L2TP,
+                                       VPNName: VPNNameText.text,
+                                       serverAddress: serverAddressText.text,
+                                       localizedDescription: remoteIdentifierText.text,
+                                       passwordReference: passwordReferenceText.text,
+                                       sharedSecretReference: sharedSecretReferenceText.text,
+                                       authenticationMethod: .certificate)
         } else {
-            vpnMgr = VPNManager.init(type: .IKEv2,
-                                     VPNName: VPNNameText.text,
-                                     serverAddress: serverAddressText.text,
-                                     remoteIdentifier: remoteIdentifierText.text,
-                                     passwordReference: passwordReferenceText.text,
-                                     sharedSecretReference: sharedSecretReferenceText.text)
+            vpnMgr = LJVPNManager.init(type: .IKEv2,
+                                       VPNName: VPNNameText.text,
+                                       serverAddress: serverAddressText.text,
+                                       localizedDescription: remoteIdentifierText.text,
+                                       passwordReference: passwordReferenceText.text,
+                                       sharedSecretReference: sharedSecretReferenceText.text,
+                                       authenticationMethod: .sharedSecret)
         }
+        vpnMgr?.delegate = self
     }
     
    
@@ -105,11 +109,30 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func disconnectAction(_ sender: UIButton) {
+        print("\(vpnMgr!.status.rawValue)")
         vpnMgr?.disconnectVPN()
     }
     
     
-    
+    func VPNStatusDidChangeNotification(status: NEVPNStatus) {
+        switch status {
+            /// 0
+            case .invalid:
+                print("无效")
+            case .disconnected:
+                print("未连接")
+            case .connecting:
+                print("正在连接...")
+            case .connected:
+                print("已连接")
+            case .reasserting:
+                print("重复...")
+            case .disconnecting:
+                print("断开连接")
+            default:
+                break
+        }
+    }
     
     
 }

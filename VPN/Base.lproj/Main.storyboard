@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -102,11 +103,14 @@
                                         <rect key="frame" x="137" y="321" width="100" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Jdv-zV-4MF"/>
-                                            <constraint firstAttribute="width" constant="100" id="mw9-aK-Ixi"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="mw9-aK-Ixi"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="保存输入">
                                             <color key="titleColor" red="0.066060230139999995" green="0.51639628410000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="saveAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6oU-W1-Lfp"/>
@@ -154,11 +158,14 @@
                                         <rect key="frame" x="66.5" y="0.0" width="100" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="wko-qy-Ufs"/>
-                                            <constraint firstAttribute="width" constant="100" id="wxH-n7-8Tz"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="wxH-n7-8Tz"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="创建">
                                             <color key="titleColor" red="0.066060230139999995" green="0.51639628410000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="createAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZnJ-tE-feO"/>
@@ -167,12 +174,15 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04t-vi-jC0">
                                         <rect key="frame" x="207.5" y="0.0" width="100" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="4Qp-EY-6jR"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="4Qp-EY-6jR"/>
                                             <constraint firstAttribute="height" constant="40" id="yex-0g-gi7"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="删除">
                                             <color key="titleColor" red="0.066060230139999995" green="0.51639628410000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="removeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Osn-B7-TSR"/>
@@ -182,11 +192,14 @@
                                         <rect key="frame" x="66.5" y="60" width="100" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="bMM-42-Meh"/>
-                                            <constraint firstAttribute="width" constant="100" id="hOb-ZN-dJp"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="hOb-ZN-dJp"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="连接">
                                             <color key="titleColor" red="0.066060230139999995" green="0.51639628410000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="connectAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PKd-dp-L0Q"/>
@@ -195,12 +208,15 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrK-cF-GY2">
                                         <rect key="frame" x="207.5" y="60" width="100" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="FUw-vY-E43"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="FUw-vY-E43"/>
                                             <constraint firstAttribute="height" constant="40" id="Ovw-za-ZA1"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="断开">
                                             <color key="titleColor" red="0.066060230139999995" green="0.51639628410000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="disconnectAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ekA-0c-Xbm"/>
