@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		18C04F3723D6A69C00EE46F8 /* LJVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C04F2B23D6A3D900EE46F8 /* LJVPN.framework */; };
 		18C04F3823D6A69C00EE46F8 /* LJVPN.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18C04F2B23D6A3D900EE46F8 /* LJVPN.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		18C09473249A0C98009998B7 /* apple-app-site-association in Resources */ = {isa = PBXBuildFile; fileRef = 18C09472249A0C98009998B7 /* apple-app-site-association */; };
 		18CB45E823CD975700C470A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB45E723CD975700C470A1 /* AppDelegate.swift */; };
 		18CB45EC23CD975700C470A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB45EB23CD975700C470A1 /* ViewController.swift */; };
 		18CB45EF23CD975700C470A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CB45ED23CD975700C470A1 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		18C04F2B23D6A3D900EE46F8 /* LJVPN.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LJVPN.framework; sourceTree = "<group>"; };
+		18C09472249A0C98009998B7 /* apple-app-site-association */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "apple-app-site-association"; sourceTree = "<group>"; };
 		18CB45E423CD975700C470A1 /* VPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CB45E723CD975700C470A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18CB45EB23CD975700C470A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				18CB45F523CD975800C470A1 /* Info.plist */,
 				18CB460023CF0AC400C470A1 /* VPN-Bridging-Header.h */,
 				18CB46E323D54FCE00C470A1 /* README.md */,
+				18C09472249A0C98009998B7 /* apple-app-site-association */,
 			);
 			path = VPN;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			files = (
 				18CB45F423CD975800C470A1 /* LaunchScreen.storyboard in Resources */,
 				18CB45F123CD975800C470A1 /* Assets.xcassets in Resources */,
+				18C09473249A0C98009998B7 /* apple-app-site-association in Resources */,
 				18CB46E423D54FCE00C470A1 /* README.md in Resources */,
 				18CB45EF23CD975700C470A1 /* Main.storyboard in Resources */,
 			);
